@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+    {% if user.id == post.author.id %}
+
+    <h1> Edit Blog Post </h1>
+    <br/> 
+    <div class = "form-group">
+        <form method ="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-secondary">Update </button>
+    </div>
+    {% else %}
+
+        You are not authorized to access this page. 
+
+    {% endif %}
+    
+{% else %}
+
+You are not authorized to access this page.
+
+{% endif %}
+
+{% endblock %}

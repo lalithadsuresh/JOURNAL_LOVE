@@ -1,6 +1,25 @@
+{%  extends 'base.html' %}
+
+{% block content %}
+
+
+
 <h1> {{ post.title }} </h1>
-<small>By: {{ post.author.first_name }}
+<small>By: {{ post.author.first_name }} -
+           {{ post.postdate }}
     </small><br/>
 <hr>
-<br/>
+
 {{ post.body }}
+
+{{ post.id }}
+
+<br/><br/>
+<a href = "{% url 'home' %}" class="btn btn-secondary"> back</a>
+
+    {% if user.id == post.author.id %}
+        <a href="{% url 'updatepost' post.pk %}" class = "btn btn-secondary"> update</a>
+        <a href="{% url 'analysisresults' post.pk %}" class = "btn btn-secondary"> analyze</a>
+    {% endif %}
+
+{% endblock %}
