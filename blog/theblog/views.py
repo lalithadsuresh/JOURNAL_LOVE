@@ -4,15 +4,21 @@ from blog.models import Post
 from django.contrib.auth.models import User
 from .forms import PostForm, EditForm
 from django.urls import reverse_lazy
-from blog.utils import analyze_user_body
-import nltk
+from blog.utils import detect_emotions
+from blog.utils import response_text, randomize_texts, sentiment_response, sentiment_analysis, process_negative_text, process_positive_text, analyze_sentence_structure, pos_list
+from django.shortcuts import render
 
-# Create your views here.
+
+# Create your views here.   
 
 #def home(request):
 #    return render(request, 'home.html', {})
 
 
+
+
+def original(request):
+    return render(request, 'index.html')
 
 class HomeView(ListView):
     model = Post
@@ -40,15 +46,28 @@ class DeletePostView(DeleteView):
     def get_success_url(self):
         return reverse_lazy('home')
 
+class ResourcesView(DetailView):
+    model = Post
+    template_name = 'resources.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
 class AnalyzePostView(DetailView):
     model = Post
     template_name = 'analysisresults.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        analysis_result = analyze_user_body(self.object.body)
+        emotions = detect_emotions(self.object.body)
+        text1 = sentiment_response(self.object.body)
+        analysis_result = response_text(emotions)
         context['analysis_result'] = analysis_result
+        context['text1'] = text1
+        
         return context
+
 
 
     

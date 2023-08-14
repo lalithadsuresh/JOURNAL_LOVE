@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="{% static 'global.css' %}" />
+    <link rel="stylesheet" href="{% static 'index.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&display=swap"
+    />
+  </head>
+  <body>
+    <style>
+      body {
+        zoom: .7; 
+      }
+    </style>
+    
+    <div class="base2">
+      <div class="journal-love">journal love</div>
+      <div class="welcome-journal-love-container">
+        <p class="welcome-journal-love">
+          welcome! journal love is a mental health application that provides
+          resources / AI responses to users’ journal entries. please proceed by
+          either logging in or registering
+        </p>
+      </div>
+      <div class="login-wrapper">
+        <a href="{% url 'login' %}" class="login">login</a>
+      </div>
+      <div class="login-container">
+        <a href="{% url 'register' %}" class="login">register</a>
+      </div>
+      </button>
+      <div class="journal-love-uses-natural-lang-parent">
+        <div class="journal-love-uses">
+          journal love uses natural language processing techniques to develop
+          advice and insight regarding a user’s feeling based on their submitted
+          journal entry
+        </div>
+        <div class="while-most-responses">
+          while most responses are accurate, there may be instances where the
+          application may not generate an appropriate response.
+        </div>
+      </div>
+      <b class="how-it-works">how it works:</b>
+      <div class="if-any-questions">
+        if any questions arise, please don’t hesitate to email!
+      </div>
+      <img class="img-0091-1-icon" alt="" src="{% static 'img1.png' %}" />
+
+      <img class="img-0092-1-icon" alt="" src="{% static 'img2.png' %}" />
+
+      <img class="img-0093-1-icon" alt="" src="{% static 'img3.png' %}" />
+    </div>
+  </body>
+</html>

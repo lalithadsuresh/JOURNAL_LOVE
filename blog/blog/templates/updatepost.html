@@ -2,8 +2,12 @@
 
 {% block content %}
 
+<div style="text-align: left; margin-left: 20px;">
+
 {% if user.is_authenticated %}
     {% if user.id == post.author.id %}
+
+    <br>
 
     <h1> Edit Blog Post </h1>
     <br/> 
@@ -12,6 +16,8 @@
             {% csrf_token %}
             {{ form.as_p }}
             <button class="btn btn-secondary">Update </button>
+    </div>
+
     </div>
     {% else %}
 

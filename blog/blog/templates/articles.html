@@ -2,6 +2,9 @@
 
 {% block content %}
 
+<br>
+
+<div style="text-align: left; margin-left: 30px; margin-bottom:">
 
 
 <h1> {{ post.title }} </h1>
@@ -12,7 +15,6 @@
 
 {{ post.body }}
 
-{{ post.id }}
 
 <br/><br/>
 <a href = "{% url 'home' %}" class="btn btn-secondary"> back</a>
@@ -20,6 +22,11 @@
     {% if user.id == post.author.id %}
         <a href="{% url 'updatepost' post.pk %}" class = "btn btn-secondary"> update</a>
         <a href="{% url 'analysisresults' post.pk %}" class = "btn btn-secondary"> analyze</a>
+        <a href="{% url 'resources' post.pk %}" class = "btn btn-secondary"> resources</a>
+
+
+    </div>
+
     {% endif %}
 
 {% endblock %}

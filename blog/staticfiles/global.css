@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-nunito: Nunito;
+
+  /* font sizes */
+  --font-size-31xl: 50px;
+  --font-size-61xl: 80px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-black: #000;
+  --color-dimgray: rgba(98, 88, 88, 0.56);
+  --color-blueviolet: #9747ff;
+
+  /* Gaps */
+  --gap-3xs: 10px;
+
+  /* Paddings */
+  --padding-mid: 17px;
+  --padding-36xl: 55px;
+  --padding-11xl: 30px;
+  --padding-xl: 20px;
+
+  /* border radiuses */
+  --br-xl: 20px;
+  --br-8xs: 5px;
+}

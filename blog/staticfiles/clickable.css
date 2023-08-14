@@ -1,0 +1,59 @@
+.login4 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.property-1default-child {
+  position: absolute;
+  height: 145.45%;
+  width: 76.56%;
+  top: -19.7%;
+  right: 8.2%;
+  bottom: -25.76%;
+  left: 15.23%;
+  overflow: hidden;
+}
+.login5,
+.property-1default1 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 256px;
+  height: 66px;
+}
+.login5 {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.property-1variant21 {
+  position: absolute;
+  top: 106px;
+  left: 20px;
+  width: 256px;
+  height: 66px;
+}
+.clickable {
+  position: relative;
+  border-radius: var(--br-8xs);
+  border: 1px dashed var(--color-blueviolet);
+  box-sizing: border-box;
+  width: 100%;
+  height: 192px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-31xl);
+  color: var(--color-black);
+  font-family: var(--font-nunito);
+}

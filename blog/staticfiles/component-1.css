@@ -1,0 +1,96 @@
+.property-1default-item {
+  position: absolute;
+  height: 100%;
+  width: 91.44%;
+  top: 0;
+  right: 8.56%;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--color-black);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.register {
+  position: absolute;
+  height: 81.82%;
+  width: 96.94%;
+  top: 9.09%;
+  left: 3.06%;
+  font-size: var(--font-size-61xl);
+  font-weight: 600;
+  font-family: var(--font-nunito);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+}
+.property-1default2 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 327px;
+  height: 132px;
+}
+.property-1variant2-child {
+  position: absolute;
+  height: 100%;
+  width: 91.44%;
+  top: 0;
+  right: 8.56%;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--color-dimgray);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.register1 {
+  position: absolute;
+  height: 81.82%;
+  width: 96.94%;
+  top: 9.09%;
+  left: 3.06%;
+  font-weight: 600;
+  display: inline-block;
+}
+.property-1variant22 {
+  position: absolute;
+  top: 215px;
+  left: 30px;
+  width: 327px;
+  height: 132px;
+}
+.property-1variant3-child {
+  position: absolute;
+  height: 100%;
+  width: 91.44%;
+  top: 0;
+  right: 8.56%;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.property-1variant3 {
+  position: absolute;
+  top: 410px;
+  left: 30px;
+  width: 327px;
+  height: 132px;
+}
+.component-1 {
+  position: relative;
+  border-radius: var(--br-8xs);
+  border: 1px dashed var(--color-blueviolet);
+  box-sizing: border-box;
+  width: 100%;
+  height: 631px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-61xl);
+  color: var(--color-white);
+  font-family: var(--font-nunito);
+}

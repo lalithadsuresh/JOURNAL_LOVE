@@ -2,15 +2,25 @@
 
 {% block content %}
 
+<br>
+
 {% if user.is_authenticated %}
 
-<h1> Add Blog Post </h1>
+<div style="text-align: left; margin-left: 20px;">
+
+<h1> Add Journal Entry </h1>
 <br/> 
+
+Suggestions for your journal entry:
+
+    1. Discuss how you feel and 
 <div class = "form-group">
     <form method ="POST">
         {% csrf_token %}
         {{ form.as_p }}
         <button class="btn btn-secondary">Post</button>
+</div>
+
 </div>
  
 {% else %}

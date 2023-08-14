@@ -1,0 +1,4 @@
+happy: joyful, delighted, happy, content, pleased, satisfied, cheerful, elated, ecstatic, exhilarated, gleeful, jovial, jolly,merry, lighthearted, carefree, radiant, upbeat, enthusiastic, euphoric, thrilled, overjoyed, grateful, blissful, serene, contented, excited, jubilant, chill
+sad: sad, worried, sorrowful, melancholy, gloomy, despondent, dejected, downcast, disheartened, downhearted, blue, depressed, glum, crestfallen, woeful, forlorn, wistful, mournful, pensive, mournful, somber, doleful, heartbroken, down, low-spirited, discouraged, down in the dumps, down in the mouth, heavy-hearted, tearful, cheerless, joyless, unhappy, troubled, wretched, heavyhearted, desolate, bereaved, sorrowing, weeping, lachrymose, blubbering, in tears, tearjerking, mournful, emotional, rueful, dreary
+angry: anger
+fearful: fear, anxiety

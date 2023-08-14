@@ -1,11 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Analysis Results for {{ user.username }}</h1>
 
-    <p>Post ID: {{ post.id }}</p>
-    <p>Post Body: {{ post.body }}</p>
-    <p>Analysis Result: {{ analysis_result }}</p>
+<br>
+
+<div style="text-align: left; margin-left: 20px;">
+
+    <h1>AI Response for {{ user.username }}</h1>
+
+
+    <p>
+        
+    <h1> What you wrote: </h1>
+    <p> {{ post.body }} </p>
+
+    <h1> Our response: </h1>
+
+    <p> {{ text1 }}</p>
+
+    <p> </p>
 
     <a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+
+    </div>
+
 {% endblock %} 

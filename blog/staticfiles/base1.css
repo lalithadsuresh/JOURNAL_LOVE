@@ -1,0 +1,99 @@
+.journal-love1,
+.login6 {
+  position: absolute;
+  font-weight: 600;
+  font-family: var(--font-nunito);
+  color: var(--color-black);
+  text-align: center;
+}
+.journal-love1 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  flex: 1;
+  margin: 0 !important;
+  top: 37px;
+  left: 57px;
+  font-size: 60px;
+  display: inline-block;
+  height: 113px;
+  -webkit-text-stroke: 1px #000;
+  z-index: 0;
+}
+.login6 {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  font-size: var(--font-size-31xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.clickable-child {
+  position: absolute;
+  height: 145.45%;
+  width: 76.56%;
+  top: -19.7%;
+  right: 8.2%;
+  bottom: -25.76%;
+  left: 15.23%;
+  overflow: hidden;
+}
+.clickable1 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  margin: 0 !important;
+  top: 53.27px;
+  left: 481.94px;
+  width: 247px;
+  height: 51px;
+  transform: rotate(-0.13deg);
+  transform-origin: 0 0;
+  z-index: 1;
+}
+.clickable-item {
+  position: absolute;
+  height: 145.45%;
+  width: 76.56%;
+  top: -19.7%;
+  right: 8.2%;
+  bottom: -25.76%;
+  left: 15.23%;
+}
+.clickable2,
+.clickable3 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  margin: 0 !important;
+  top: 44px;
+  left: 671px;
+  width: 256px;
+  height: 66px;
+  z-index: 2;
+}
+.clickable3 {
+  top: 43px;
+  left: 870px;
+  z-index: 3;
+}
+.base1 {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 982px;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-36xl) var(--padding-11xl) var(--padding-xl);
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-3xs);
+}

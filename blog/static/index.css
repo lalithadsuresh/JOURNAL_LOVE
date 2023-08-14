@@ -1,0 +1,152 @@
+.journal-love {
+  position: absolute;
+  top: 132px;
+  left: 542px;
+  font-size: var(--font-size-61xl);
+  font-weight: 600;
+  display: inline-block;
+  width: 428px;
+  -webkit-text-stroke: 1px #000;
+}
+.welcome-journal-love {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  /* Adjust styles for smaller screens */
+}
+
+.welcome-journal-love-container {
+  position: absolute;
+  top: 337px;
+  left: 149px;
+  font-weight: 600;
+  display: inline-block;
+  width: 1180px;
+  height: 100px;
+}
+.login {
+  position: relative;
+  font-size: var(--font-size-31xl);
+  font-weight: 600;
+  font-family: var(--font-nunito);
+  color: var(--color-white);
+  text-align: left;
+  display: inline-block;
+  width: 307px;
+  height: 64px;
+  flex-shrink: 0;
+}
+.login-container,
+.login-wrapper {
+  cursor: pointer;
+  border: 1px solid var(--color-black);
+  padding: 0 0 0 var(--padding-mid);
+  background-color: var(--color-dimgray);
+  position: absolute;
+  top: 743px;
+  left: 368px;
+  border-radius: var(--br-xl);
+  box-sizing: border-box;
+  width: 157px;
+  height: 70px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.login-container {
+  left: 866px;
+  width: 208px;
+  height: 71px;
+}
+.journal-love-uses,
+.while-most-responses {
+  position: absolute;
+  top: 203px;
+  left: 165px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 756px;
+  height: 400px;
+}
+.while-most-responses {
+  top: 658px;
+  left: -322px;
+}
+.journal-love-uses-natural-lang-parent {
+  position: absolute;
+  top: 870px;
+  left: 447px;
+  width: 790px;
+  height: 24px;
+}
+.how-it-works,
+.if-any-questions {
+  position: absolute;
+  top: 869px;
+  left: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 756px;
+  height: 232px;
+}
+.if-any-questions {
+  top: 2007px;
+  left: 612px;
+  font-weight: 600;
+  width: 775px;
+  height: 403px;
+}
+.img-0091-1-icon,
+.img-0092-1-icon,
+.img-0093-1-icon {
+  position: absolute;
+  top: 1100px;
+  left: 269px;
+  width: 232px;
+  height: 346px;
+  object-fit: cover;
+}
+
+html, body {
+  height: 100%;
+}
+
+#main
+{
+   position:fixed;
+   top:0px;
+   bottom:0px;
+   left:0px;
+   right:0px;
+}
+
+.img-0092-1-icon,
+.img-0093-1-icon {
+  top: 1482px;
+  left: 918px;
+  width: 518px;
+  height: 491px;
+}
+.img-0093-1-icon {
+  top: 1928px;
+  left: 137px;
+  width: 366px;
+  height: 526.5px;
+}
+.base2 {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 2589px;
+  text-align: center;
+  font-size: var(--font-size-31xl);
+  color: var(--color-black);
+  font-family: var(--font-nunito);
+}
+

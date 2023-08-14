@@ -2,6 +2,11 @@
 
 {% block content %}
 
+<br>
+
+
+<div style="text-align: left; margin-left: 200px; margin-bottom: 150px;">
+
 <h1> Register </h1>
 <br/> 
 <div class = "form-group">
@@ -9,6 +14,8 @@
         {% csrf_token %}
         {{ form.as_p }}
         <button class="btn btn-secondary">Register</button>
+</div>
+
 </div>
  
 

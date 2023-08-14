@@ -1,34 +1,30 @@
 {% extends 'base.html' %}
+
 {% block content %}
 
-<h1>Post</h1>
+<br> 
+<br>
 
 <ul>
 {% for post in object_list %}
     <li>
         <a href="{% url 'articles' post.pk %}">
             {{ post.title }}
-        </smalltag> </a> - {{ post.author }} - 
-        
+        </a> - {{ post.author }} -
         {% if user.is_authenticated %}
-
             {% if user.id == post.author.id %}
-
-            
-            
                 <a href="{% url 'updatepost' post.pk %}">
-                (Edit) </button>  </smalltag> </a> 
-                </smalltag> <a href="{% url 'deletepost' post.pk %}">
-                (Delete) <br/>  </smalltag> <a/>
-
+                (Edit) </a>
+                <a href="{% url 'deletepost' post.pk %}">
+                (Delete) <br/></a>
             {% endif %}
-
-            
         {% endif %}
-
         {{ post.body|slice:":200" }}
     </li>
 {% endfor %}
 </ul>
-
 {% endblock %}
+
+
+
+
