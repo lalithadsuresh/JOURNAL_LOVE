@@ -102,13 +102,7 @@ def sentiment_analysis(text):
 
     return positive_word, negative_word, positive_ratio, negative_ratio
 
-def pos_list(negative):
 
-    pos_list = analyze_sentence_structure(negative)
-
-    return len(pos_list), pos_list[0][3], pos_list[0][3][0]
-
-    
 
 def process_negative_text(negative):
 
@@ -118,7 +112,7 @@ def process_negative_text(negative):
     count = 0
 
     for i in range(len(pos_list)):
-        if count == 2:
+        if count == 4:
             break
             
         if pos_list[0][i][1] == 'JJ':
@@ -126,9 +120,9 @@ def process_negative_text(negative):
 
             ' Question how your ' + pos_list[0][i][0] + ' lifestyle can be avoided. ',
 
-            ' How does ' + pos_list[0][i][0] + ' manifest in your life. What can you do to avoid this. ',
+            ' How does ' + pos_list[0][i][0] + ' feeling manifest in your life. What can you do to avoid this? ',
 
-            'Remind yourself what it is like to be ' + pos_list[0][i][0] + '. How bad do you want to avoid this feeling?' 
+            'Remind yourself what ' + pos_list[0][i][0] + ' things means to you' 
 
 
             ]
@@ -142,7 +136,7 @@ def process_negative_text(negative):
 
             'You seem to attach to your negative side based on your use of the word ' + pos_list[0][i][0] + '. ',
 
-            'In order to love yourself, try understanding ' + pos_list[0][i][0] + '. Make habits to avoid it. ',
+            'In order to love yourself, try understanding ' + pos_list[0][i][0] + '. Make habits to avoid it. '
 
 
             ]
@@ -151,17 +145,19 @@ def process_negative_text(negative):
 
             count += 1
 
-            return text
+        return text
 
 def process_positive_text(positive):
 
     pos_list = analyze_sentence_structure(positive)
+    positive_synonyms = get_synonyms_for_list(positive) 
+    
 
     text = ''
     count = 0
     
     for i in range(len(pos_list)):
-        if count == 2:
+        if count == 4:
             break
             
         if pos_list[0][i][1] == 'JJ':
@@ -192,11 +188,30 @@ def process_positive_text(positive):
 
             ]
 
+
             text += randomize_texts(texts)
 
             count += 1
             
     return text
+
+def get_synonyms(word):
+    synonyms = []
+    for syn in wordnet.synsets(word):
+        for lemma in syn.lemmas():
+            synonyms.append(lemma.name())
+    return synonyms
+
+def get_synonyms_for_list(words):
+    synonyms_list = []
+    for word in words:
+        synonyms = get_synonyms(word)
+        synonyms_list.append(synonyms)
+    return synonyms_list
+
+        
+
+
 
 def sentiment_response(text):
 
@@ -216,25 +231,48 @@ def sentiment_response(text):
     
     negative_advice = [
 
-        ' Your journal entry is an indication you attach to negativity in your life. Detatching from this can be very difficult. Incorporate gratitude, meditation, and breathing into your daily routine to see some starting changes with your lifestlye ',
-        ' I may be wrong but this is a solemn journal entry. You are sad. You are angry. And you may be feeling down. Ultimately, it comes down to habits first. Are you sleeping well? Are you eating well? Figure these things out and then write again. ',
+        ' Your journal entry is an indication you attach to negativity in your life. This isnt to say your feelings arent valid. However, your feelings are complex and require deeper thought. In the meantime, try to incorporate gratitude, meditation, and breathing into your daily routine to see some starting changes with your lifestlye ',
+        ' I may be wrong but this is a solemn journal entry. You are sad. You are angry. And you may be feeling down. Ultimately, it comes down to habits first. Are you sleeping well? Are you eating well? Figure these things out and then write again. '
 
     ]
 
-    if positive_word:
-        positive_response = process_positive_text(positive_word)
+    negative_positive_advice = [
 
-    if negative_word:
-        negative_response = process_negative_text(negative_word)
+        ' This mix of emotions indicates that you may be confused how to feel. Its okay to feel confused. Emotions can be complex and multifaceted, and its normal to have mixed or unclear feelings at times. ',
+        ' Sometimes, simply identifying and labeling your emotions can provide clarity. Write these emotions down in Journal Love and practice understanding them. ',
+        ' Think about what you might need in this moment. Do you need some alone time, a supportive conversation, or a creative outlet? Addressing your needs can help you navigate your feelings.'
+
+    ]
+
     
-    if positive >= .5:
+
+    positive_synonyms = get_synonyms_for_list(positive_word)
+    negative_snyonyms = get_synonyms_for_list(negative_word)
+    
+
+
+    
+    
+    if positive >= .1:
         positive_response += ' You seem to be very positive in this journal entry.'
         positive_response += randomize_texts(positive_advice)
 
-    if negative >= .5:
-        negative_response += 'You seem to be very negative in this journal entry.'
+    if negative >= .1:
+        negative_response += 'This journal entry signifies dissatisfaction.'
         negative_response += randomize_texts(negative_advice)
-        
+
+    if negative >= .5 and positive >= .5:
+        negative_response += 'You are experiencing a mix of both positive and negative emotions.'
+        negative_response += randomize_texts(negative_positive_advice)
+
+    positive_text = process_positive_text(positive_word)
+    if positive_text != None:
+        positive_response += positive_text
+    
+
+    negative_text = process_negative_text(negative_word)
+    if negative_text != None:
+        negative_response += negative_text
 
     
     if not positive_response and not negative_response:
@@ -245,82 +283,6 @@ def sentiment_response(text):
     return final_response
 
 
-
-
-
-
-
-    
-
-
-    #     if (negative > 1 and positive > 1):
-    #         count = 0 
-    #         for i in range(min(len(negative_word), len(pos_tags_negative), len(positive_word), len(pos_tags_positive))):
-    #             first_word, pos_tag1 = pos_tags_negative[i]
-    #             second_word, pos_tag2 = pos_tags_positive[i]
-    #             third_word, pos_tag3 = pos_tags_negative[i-1]
-    #             fourth_word, pos_tag4 = pos_tags_positive[i-1]
-
-    #             if pos_tag1 == 'JJ' and pos_tag2 == 'JJ' and pos_tag2 == 'JJ' and pos_tag3 == 'JJ':
-    #                 texts = [
-    #                     ' There are a lot of emotions on this journal entry which I appreciate. '
-    #                     ' You say you are ' + second_word + ' and ' + fourth_word + '. I love the energy!'
-    #                     ' Right off the bat, I can clearly tell you are happy about some things. Also, '
-    #                     ' there are things that are bothering you. For example, you explain that you are '
-    #                     + first_word + '. Obviously, this is a very negative emotion. Are there stronger reasons'
-    #                     ' why you might be feeling this way? In what ways can you avoid this feeling? The same thing'
-    #                     ' applies when you mention how you are' + third_word + '. What can you do to feel better and avoid'
-    #                     ' these feelings?'
-
-    #                     ' Interesting! You might feel ' + first_word + ', but do not fret.'
-    #                     ' Your resilience and strength is something you need to find'
-    #                     ' deep within you. Maybe hold on to how you are ' + second_word +
-    #                     ' and embrace that feeling of warmth.',
-
-    #                 ]
-
-    #                 text += randomize_texts(texts)
-    #                 break
-    #             else:
-    #                 continue
-
-    #     if (positive > 0):
-    #         count = 0 
-    #         for i in range(len(positive_word)):
-    #             if i >= len(pos_tags_positive):  # Check if the index is within the valid range
-    #                 break
-    #             first_word, pos_tag = pos_tags_positive[i]
-    #             if pos_tag == 'JJ':
-    #                 text += ' You embrace positivity when you describe how you are ' 
-    #                 text += first_word + '.'
-    #                 count += 1
-    #             if pos_tag == 'NN':
-    #                 text += ' I love how you descibe your ' + first_word + '. Holding on'
-    #                 text += ' to this will really help you be more joyful in life.'
-    #                 count += 1
-    #             if count == 2:
-    #                 break
-
-    #     if negative > 0:
-    #         count = 0 
-    #         for i in range(min(len(negative_word), len(pos_tags_negative))):  # Use the smaller length to prevent IndexError
-    #             first_word, pos_tag = pos_tags_negative[i]
-    #             if pos_tag == 'JJ':
-    #                 text += ' You embrace negativity when you describe how you are ' 
-    #                 text += first_word + '.'
-    #                 count += 1
-
-    #             if pos_tag.startswith('NN'):  # Check if the POS tag starts with 'NN'
-    #                 text += ' Question why your ' + first_word + ' might be bothering you.'
-    #                 text += ' Think about what you can do to avoid those negative feelings.'
-    #                 count += 1
-
-    #             if count == 2:
-    #                 break
-
-
-
-    # return emotions, positive_word, negative_word, text
 
 
 

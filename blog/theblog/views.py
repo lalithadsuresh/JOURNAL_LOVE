@@ -5,7 +5,8 @@ from django.contrib.auth.models import User
 from .forms import PostForm, EditForm
 from django.urls import reverse_lazy
 from blog.utils import detect_emotions
-from blog.utils import response_text, randomize_texts, sentiment_response, sentiment_analysis, process_negative_text, process_positive_text, analyze_sentence_structure, pos_list
+from blog.utils import response_text, randomize_texts, sentiment_response, sentiment_analysis, process_negative_text, process_positive_text, analyze_sentence_structure
+from blog.utils import get_synonyms, get_synonyms_for_list
 from django.shortcuts import render
 
 
@@ -62,9 +63,12 @@ class AnalyzePostView(DetailView):
         context = super().get_context_data(**kwargs)
         emotions = detect_emotions(self.object.body)
         text1 = sentiment_response(self.object.body)
+        synonyms = get_synonyms_for_list(emotions)
         analysis_result = response_text(emotions)
         context['analysis_result'] = analysis_result
         context['text1'] = text1
+        #context['synonyms'] = synonyms
+        #context['text'] = text
         
         return context
 
