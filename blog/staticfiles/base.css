@@ -24,8 +24,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px; 
+  
 }
+
+
 .clickable4,
 .clickable5,
 .clickable6 {
@@ -36,9 +38,9 @@
   flex: 1;
   position: absolute;
   margin: 0 !important;
-  top: 50px;
+  top: 42px;
   left: 427px;
-  height: 50px;
+  height: 66px;
   z-index: 1;
 }
 .clickable5,
@@ -66,3 +68,4 @@
   color: var(--color-black);
   font-family: var(--font-nunito);
 }
+

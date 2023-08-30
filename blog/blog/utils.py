@@ -147,6 +147,17 @@ def process_negative_text(negative):
 
         return text
 
+def fafo(all):
+
+    pos_list = analyze_sentence_structure(all)
+    
+    return pos_list, pos_list[0][0][0], pos_list[0][0][1]
+        
+
+
+
+
+
 def process_positive_text(positive):
 
     pos_list = analyze_sentence_structure(positive)
