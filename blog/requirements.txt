@@ -31,6 +31,7 @@ package-json==0.0.0
 pandas==2.0.1
 platformdirs==3.8.1
 protobuf==3.20.3
+psycopg2-binary==2.9.7
 PyMySQL==1.0.3
 python-dateutil==2.8.2
 pytz==2023.3

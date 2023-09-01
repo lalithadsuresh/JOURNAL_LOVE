@@ -14,7 +14,7 @@ import os
 from pathlib import Path
 from django.conf import settings
 from django.conf import settings
-import dj_database_url
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,12 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = 'django-insecure-t*r8y4r8y7ln=d$2+!^jd3@%z(t%)2f6k0%l(k%8crg!#qyj&e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("DEBUG", "False", ).lower() == "true"
+DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOSTS').split(" ")]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -79,8 +79,6 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -88,10 +86,6 @@ DATABASES = {
 
     }
 }
-
-database_url = os.environ.get("DATABASE_URL")
-
-DATABASES["default"] = dj_database_url.parse("postgres://journal_love_user:aWYUn4hqRASlv5sqA1jEwuzr2yPjopKV@dpg-cjno598cfp5c73ejemng-a.oregon-postgres.render.com/journal_love")
 
 #postgres://journal_love_user:aWYUn4hqRASlv5sqA1jEwuzr2yPjopKV@dpg-cjno598cfp5c73ejemng-a.oregon-postgres.render.com/journal_love
 
