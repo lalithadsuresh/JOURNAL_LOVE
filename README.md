@@ -10,3 +10,6 @@ Journal Love is deployed using Heroku and Gunicorn. Access it using the link bel
 
 https://journallove-e9a7a6e26520.herokuapp.com/
 
+side note:
+
+UTILS.PY -> MAIN NLTK ALGORITHM FOR RESPONSE 
