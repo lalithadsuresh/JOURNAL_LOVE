@@ -1,8 +1,8 @@
 # JOURNAL LOVE
 
-Welcome to Journal Love (ReactProject)
+Welcome to Journal Love
 
-Developed using Python and Django, Journal Love allows users to describe their feelings and receive input/advice.
+Developed using Python and Django, Journal Love allows users to describe their feelings and receive output/advice.
 To submit your first journal entry, register and log in. Then, add a post. After adding the post, click on the created post
 and scroll to the "analyze" button. Click on the button and Journal Love's advice will appear.
 
